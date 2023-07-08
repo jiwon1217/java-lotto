@@ -4,10 +4,12 @@ import java.util.regex.Pattern;
 import lotto.domain.Lotto;
 
 public class WinningLottoException {
-    public static final String INVALID_INPUT_PATTERN = "[ERROR] 입력 형식과 맞지 않습니다.";
+    private static final int MIN_RANGE = 1;
+    private static final int MAX_RANGE = 45;
     private static final Pattern INPUT_PATTERN = Pattern.compile("^[\\d]+,[\\d]+,[\\d]+,[\\d]+,[\\d]+,[\\d]+$");
-    public static final String BONUS_NUMBER_IS_DUPLICATED_WITH_WINNING_NUMBER = "[ERROR] 보너스 번호는 당첨 번호와 중복되지 않아야 합니다.";
-    public static final String INVALID_NUMBER_RANGE = "[ERROR] 로또 번호의 범위는 1 ~ 45까지 입니다.";
+    private static final String INVALID_INPUT_PATTERN = "[ERROR] 입력 형식과 맞지 않습니다.";
+    private static final String BONUS_NUMBER_IS_DUPLICATED_WITH_WINNING_NUMBER = "[ERROR] 보너스 번호는 당첨 번호와 중복되지 않아야 합니다.";
+    private static final String INVALID_NUMBER_RANGE = "[ERROR] 로또 번호의 범위는 1 ~ 45까지 입니다.";
 
     public static void isValidInputPattern(String winningLotto) {
         if (!INPUT_PATTERN.matcher(winningLotto).matches()) {
@@ -22,7 +24,7 @@ public class WinningLottoException {
     }
 
     public static void isValidNumberRange(int bonusNumber) {
-        if (bonusNumber < 1 || bonusNumber > 45) {
+        if (bonusNumber < MIN_RANGE || bonusNumber > MAX_RANGE) {
             throw new IllegalArgumentException(INVALID_NUMBER_RANGE);
         }
     }
