@@ -11,19 +11,19 @@ public class WinningLottoException {
     private static final String BONUS_NUMBER_IS_DUPLICATED_WITH_WINNING_NUMBER = "[ERROR] 보너스 번호는 당첨 번호와 중복되지 않아야 합니다.";
     private static final String INVALID_NUMBER_RANGE = "[ERROR] 로또 번호의 범위는 1 ~ 45까지 입니다.";
 
-    public static void isValidInputPattern(String winningLotto) {
+    public static void validateInputPattern(String winningLotto) {
         if (!INPUT_PATTERN.matcher(winningLotto).matches()) {
             throw new IllegalArgumentException(INVALID_INPUT_PATTERN);
         }
     }
 
-    public static void isDuplicatedWithWinningNumbers(Lotto winningLotto, int bonusNumber) {
+    public static void validateBonusNumber(Lotto winningLotto, int bonusNumber) {
         if (winningLotto.isContain(bonusNumber)) {
             throw new IllegalArgumentException(BONUS_NUMBER_IS_DUPLICATED_WITH_WINNING_NUMBER);
         }
     }
 
-    public static void isValidNumberRange(int bonusNumber) {
+    public static void validateNumberRange(int bonusNumber) {
         if (bonusNumber < MIN_RANGE || bonusNumber > MAX_RANGE) {
             throw new IllegalArgumentException(INVALID_NUMBER_RANGE);
         }

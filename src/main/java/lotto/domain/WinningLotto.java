@@ -1,8 +1,8 @@
 package lotto.domain;
 
-import static lotto.exception.WinningLottoException.isDuplicatedWithWinningNumbers;
-import static lotto.exception.WinningLottoException.isValidInputPattern;
-import static lotto.exception.WinningLottoException.isValidNumberRange;
+import static lotto.exception.WinningLottoException.validateBonusNumber;
+import static lotto.exception.WinningLottoException.validateInputPattern;
+import static lotto.exception.WinningLottoException.validateNumberRange;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -12,10 +12,10 @@ public class WinningLotto {
     private final int bonusNumber;
 
     public WinningLotto(String winningLotto, int bonusNumber) {
-        isValidInputPattern(winningLotto);
+        validateInputPattern(winningLotto);
         this.winningLotto = convert(winningLotto);
-        isDuplicatedWithWinningNumbers(this.winningLotto, bonusNumber);
-        isValidNumberRange(bonusNumber);
+        validateBonusNumber(this.winningLotto, bonusNumber);
+        validateNumberRange(bonusNumber);
         this.bonusNumber = bonusNumber;
     }
 
