@@ -1,16 +1,16 @@
 package lotto.domain;
 
-import static lotto.exception.MoneyException.isDivideByThousand;
-import static lotto.exception.MoneyException.isPositive;
-import static lotto.exception.MoneyException.isValidMoneyType;
+import static lotto.exception.MoneyException.validateDivideByThousand;
+import static lotto.exception.MoneyException.validatePositive;
+import static lotto.exception.MoneyException.validateMoneyType;
 
 public class Money {
     private final int money;
 
     public Money(String money) {
-        isValidMoneyType(money);
-        isPositive(money);
-        isDivideByThousand(money);
+        validateMoneyType(money);
+        validatePositive(money);
+        validateDivideByThousand(money);
         this.money = Integer.parseInt(money);
     }
 
