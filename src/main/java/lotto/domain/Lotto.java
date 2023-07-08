@@ -3,17 +3,17 @@ package lotto.domain;
 import java.util.Collections;
 import java.util.List;
 
-import static lotto.exception.LottoException.isDuplicateNumber;
-import static lotto.exception.LottoException.isValidLottoSize;
-import static lotto.exception.LottoException.isValidNumberRange;
+import static lotto.exception.LottoException.validateDuplicateNumber;
+import static lotto.exception.LottoException.validateLottoSize;
+import static lotto.exception.LottoException.validateNumberRange;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        isValidLottoSize(numbers);
-        isValidNumberRange(numbers);
-        isDuplicateNumber(numbers);
+        validateLottoSize(numbers);
+        validateNumberRange(numbers);
+        validateDuplicateNumber(numbers);
         this.numbers = numbers;
     }
 
