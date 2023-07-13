@@ -1,10 +1,7 @@
 package lotto.view;
 
-import static lotto.exception.MoneyException.validateDivideByThousand;
-import static lotto.exception.MoneyException.validateMoneyType;
-import static lotto.exception.MoneyException.validatePositive;
-
 import camp.nextstep.edu.missionutils.Console;
+import lotto.exception.MoneyException;
 
 public class InputView {
 
@@ -16,14 +13,8 @@ public class InputView {
     public static Integer inputMoney() {
         System.out.println(INPUT_MONEY);
         String money = Console.readLine();
-        validateMoney(money);
+        MoneyException.validateMoney(money);
         return Integer.parseInt(money);
-    }
-
-    private static void validateMoney(String money) {
-        validateMoneyType(money);
-        validatePositive(money);
-        validateDivideByThousand(money);
     }
 
     public static String inputWinningLottoNumbers() {
