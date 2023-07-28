@@ -6,8 +6,8 @@ import lotto.domain.Lotto;
 
 public class LottoConverter {
 
-    public static Lotto convertToLotto(String winningLotto) {
-        return new Lotto(Arrays.stream(winningLotto.split(","))
+    public static Lotto convertToLotto(String winningLottoNumbers) {
+        return new Lotto(Arrays.stream(winningLottoNumbers.split(","))
             .map(Integer::parseInt)
             .collect(Collectors.toList()));
     }
