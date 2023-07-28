@@ -1,7 +1,7 @@
 package lotto.exception;
 
 import java.util.regex.Pattern;
-import lotto.domain.Lotto;
+import lotto.model.Lotto;
 
 public class WinningLottoException {
     private static final Pattern INPUT_PATTERN = Pattern.compile("^[\\d]+,[\\d]+,[\\d]+,[\\d]+,[\\d]+,[\\d]+$");

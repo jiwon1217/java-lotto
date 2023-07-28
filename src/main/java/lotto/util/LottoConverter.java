@@ -2,7 +2,7 @@ package lotto.util;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import lotto.domain.Lotto;
+import lotto.model.Lotto;
 
 public class LottoConverter {
 

@@ -1,10 +1,10 @@
-package lotto.domain.result;
+package lotto.model.result;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import lotto.domain.Lotto;
-import lotto.domain.Lottos;
-import lotto.domain.WinningLotto;
+import lotto.model.Lotto;
+import lotto.model.Lottos;
+import lotto.model.WinningLotto;
 
 public class Result {
     private final Map<Rank, Integer> result = new LinkedHashMap<>();

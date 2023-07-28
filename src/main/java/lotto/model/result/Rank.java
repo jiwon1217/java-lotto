@@ -1,4 +1,4 @@
-package lotto.domain.result;
+package lotto.model.result;
 
 import java.util.Arrays;
 import java.util.List;

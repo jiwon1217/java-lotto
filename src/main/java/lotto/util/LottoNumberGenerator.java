@@ -1,9 +1,9 @@
 package lotto.util;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import lotto.domain.Lotto;
-import lotto.domain.LottoCount;
-import lotto.domain.Lottos;
+import lotto.model.Lotto;
+import lotto.model.LottoCount;
+import lotto.model.Lottos;
 
 public class LottoNumberGenerator {
 

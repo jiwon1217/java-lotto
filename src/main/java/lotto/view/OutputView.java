@@ -1,11 +1,11 @@
 package lotto.view;
 
-import lotto.domain.Lotto;
-import lotto.domain.LottoCount;
-import lotto.domain.Lottos;
-import lotto.domain.Money;
-import lotto.domain.result.Rank;
-import lotto.domain.result.Result;
+import lotto.model.Lotto;
+import lotto.model.LottoCount;
+import lotto.model.Lottos;
+import lotto.model.Money;
+import lotto.model.result.Rank;
+import lotto.model.result.Result;
 
 import java.util.ArrayList;
 import java.util.Collections;
