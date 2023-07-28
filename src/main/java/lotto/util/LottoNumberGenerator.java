@@ -11,11 +11,11 @@ public class LottoNumberGenerator {
     private static final int MAX_RANGE = 45;
     private static final int LOTTO_LENGTH = 6;
 
-    public Lottos generateLottos(LottoCount lottoCount) {
+    public static Lottos generateLottos(LottoCount lottoCount) {
         return generateLottoNumbers(lottoCount);
     }
 
-    public Lottos generateLottoNumbers(LottoCount lottoCount) {
+    public static Lottos generateLottoNumbers(LottoCount lottoCount) {
         int count = lottoCount.getLottoCount();
         Lottos lottos = new Lottos();
 
@@ -28,7 +28,7 @@ public class LottoNumberGenerator {
         return lottos;
     }
 
-    private Lotto generateLotto() {
+    private static Lotto generateLotto() {
         return new Lotto(Randoms.pickUniqueNumbersInRange(MIN_RANGE, MAX_RANGE, LOTTO_LENGTH));
     }
 }
