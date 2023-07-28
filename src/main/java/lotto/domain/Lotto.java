@@ -2,18 +2,13 @@ package lotto.domain;
 
 import java.util.Collections;
 import java.util.List;
-
-import static lotto.exception.LottoException.validateDuplicateNumber;
-import static lotto.exception.LottoException.validateLottoSize;
-import static lotto.exception.LottoException.validateNumberRange;
+import lotto.exception.LottoException;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validateLottoSize(numbers);
-        validateNumberRange(numbers);
-        validateDuplicateNumber(numbers);
+        LottoException.validateLotto(numbers);
         this.numbers = numbers;
     }
 
