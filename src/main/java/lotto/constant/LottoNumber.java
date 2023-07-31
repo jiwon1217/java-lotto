@@ -6,4 +6,6 @@ public class LottoNumber {
     public static final int MAX_RANGE = 45;
     public static final int LOTTO_LENGTH = 6;
     public static final int DEFAULT_UNIT = 1000;
+    public static final int ONE_HUNDRED_PERCENT = 100;
+
 }

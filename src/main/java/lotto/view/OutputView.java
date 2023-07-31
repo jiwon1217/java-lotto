@@ -1,6 +1,7 @@
 package lotto.view;
 
 import lotto.constant.InputMessage;
+import lotto.constant.LottoNumber;
 import lotto.constant.OutputMessage;
 import lotto.model.Lotto;
 import lotto.model.LottoCount;
@@ -18,7 +19,6 @@ public class OutputView {
 
     private static final String NEW_LINE = System.lineSeparator();
     private static final Map<Integer, String> winnings = WinningsGenerator.createWinnings();
-    private static final int ONE_HUNDRED = 100;
 
     public static void printInputMoneyMessage(){
         System.out.println(InputMessage.INPUT_MONEY);
@@ -69,7 +69,7 @@ public class OutputView {
 
     public static void printYield(Result result, Money money) {
         double winnings = result.getWinnings();
-        double yield = (winnings / money.getMoney()) * ONE_HUNDRED;
+        double yield = (winnings / money.getMoney()) * LottoNumber.ONE_HUNDRED_PERCENT;
         System.out.printf(OutputMessage.TOTAL_YIELD.toString(), yield);
     }
 
