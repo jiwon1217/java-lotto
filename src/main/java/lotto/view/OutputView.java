@@ -7,28 +7,17 @@ import lotto.model.Lottos;
 import lotto.model.Money;
 import lotto.model.result.Rank;
 import lotto.model.result.Result;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import lotto.util.WinningsGenerator;
 
 public class OutputView {
 
     private static final String NEW_LINE = System.lineSeparator();
+    private static final Map<Integer, String> winnings = WinningsGenerator.createWinnings();
     private static final int ONE_HUNDRED = 100;
-    private static final Map<Integer, String> winnings = createWinningsMap();
-
-    private static Map<Integer, String> createWinningsMap() {
-        Map<Integer, String> map = new LinkedHashMap<>();
-        map.put(2_000_000_000, "2,000,000,000");
-        map.put(30_000_000, "30,000,000");
-        map.put(1_500_000, "1,500,000");
-        map.put(50_000, "50,000");
-        map.put(5_000, "5,000");
-        return map;
-    }
 
     public static void printLottoCount(LottoCount lottoCount) {
         System.out.println(NEW_LINE);
