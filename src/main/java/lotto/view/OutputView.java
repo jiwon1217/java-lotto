@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.constant.InputMessage;
 import lotto.constant.OutputMessage;
 import lotto.model.Lotto;
 import lotto.model.LottoCount;
@@ -19,6 +20,10 @@ public class OutputView {
     private static final Map<Integer, String> winnings = WinningsGenerator.createWinnings();
     private static final int ONE_HUNDRED = 100;
 
+    public static void printInputMoneyMessage(){
+        System.out.println(InputMessage.INPUT_MONEY);
+    }
+
     public static void printLottoCount(LottoCount lottoCount) {
         System.out.println(NEW_LINE);
         System.out.printf(OutputMessage.NUMBER_OF_PURCHASED_LOTTOS.toString(), lottoCount.getLottoCount());
@@ -32,6 +37,15 @@ public class OutputView {
             System.out.println(numbers);
         }
         System.out.println(NEW_LINE);
+    }
+
+    public static void printInputWinningLottoNumbersMessage(){
+        System.out.println(InputMessage.INPUT_WINNING_LOTTO_NUMBERS);
+    }
+
+    public static void printInputBonusNumber(){
+        System.out.printf(NEW_LINE);
+        System.out.println(InputMessage.INPUT_BONUS_NUMBER);
     }
 
     public static void printStatistic(Result result) {
