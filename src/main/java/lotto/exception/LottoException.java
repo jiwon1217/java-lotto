@@ -24,7 +24,7 @@ public class LottoException {
     }
 
     private static void validateNumberRange(List<Integer> numbers) {
-        for (int number : numbers) {
+        for (Integer number : numbers) {
             if (number < MIN_RANGE || number > MAX_RANGE) {
                 throw new IllegalArgumentException(INVALID_NUMBER_RANGE);
             }
