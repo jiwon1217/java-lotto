@@ -2,12 +2,9 @@ package lotto.exception;
 
 import java.util.List;
 import lotto.constant.ExceptionMessage;
+import lotto.constant.LottoNumber;
 
 public class LottoException {
-
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 45;
-    private static final int LOTTO_LENGTH = 6;
 
     public static void validateLotto(List<Integer> numbers) {
         validateLottoSize(numbers);
@@ -16,14 +13,14 @@ public class LottoException {
     }
 
     private static void validateLottoSize(List<Integer> numbers) {
-        if (numbers.size() != LOTTO_LENGTH) {
+        if (numbers.size() != LottoNumber.LOTTO_LENGTH) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_LOTTO_SIZE.toString());
         }
     }
 
     private static void validateNumberRange(List<Integer> numbers) {
         for (Integer number : numbers) {
-            if (number < MIN_RANGE || number > MAX_RANGE) {
+            if (number < LottoNumber.MIN_RANGE || number > LottoNumber.MAX_RANGE) {
                 throw new IllegalArgumentException(ExceptionMessage.INVALID_NUMBER_RANGE.toString());
             }
         }

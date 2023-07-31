@@ -1,6 +1,7 @@
 package lotto.exception;
 
 import lotto.constant.ExceptionMessage;
+import lotto.constant.LottoNumber;
 
 public class MoneyException {
 
@@ -27,7 +28,7 @@ public class MoneyException {
 
     public static void validateDivideByThousandUnit(String money) {
         int amount = Integer.parseInt(money);
-        if (amount % 1000 != 0) {
+        if (amount % LottoNumber.DEFAULT_UNIT != 0) {
             throw new IllegalArgumentException(
                 ExceptionMessage.MONEY_MUST_MULTIPLE_OF_THOUSAND.toString());
         }

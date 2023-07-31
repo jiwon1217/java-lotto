@@ -1,15 +1,12 @@
 package lotto.util;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import lotto.constant.LottoNumber;
 import lotto.model.Lotto;
 import lotto.model.LottoCount;
 import lotto.model.Lottos;
 
 public class LottoNumberGenerator {
-
-    private static final int MIN_RANGE = 1;
-    private static final int MAX_RANGE = 45;
-    private static final int LOTTO_LENGTH = 6;
 
     public static Lottos generateLottos(LottoCount lottoCount) {
         return generateLottoNumbers(lottoCount);
@@ -29,6 +26,6 @@ public class LottoNumberGenerator {
     }
 
     private static Lotto generateLotto() {
-        return new Lotto(Randoms.pickUniqueNumbersInRange(MIN_RANGE, MAX_RANGE, LOTTO_LENGTH));
+        return new Lotto(Randoms.pickUniqueNumbersInRange(LottoNumber.MIN_RANGE, LottoNumber.MAX_RANGE, LottoNumber.LOTTO_LENGTH));
     }
 }
