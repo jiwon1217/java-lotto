@@ -1,10 +1,8 @@
 package lotto.exception;
 
-public class MoneyException {
+import lotto.constant.ExceptionMessage;
 
-    public static final String INVALID_MONEY_TYPE = "[ERROR] 금액은 숫자여야 합니다.";
-    public static final String MONEY_MUST_NOT_NEGATIVE = "[ERROR] 금액은 음수일 수 없습니다.";
-    public static final String MONEY_MUST_MULTIPLE_OF_THOUSAND = "[ERROR] 금액은 1,000원 단위로 나누어 떨어져야 합니다.";
+public class MoneyException {
 
     public static void validateMoney(String money) {
         validateMoneyType(money);
@@ -16,21 +14,22 @@ public class MoneyException {
         try {
             Integer.parseInt(money);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(INVALID_MONEY_TYPE);
+            throw new IllegalArgumentException(ExceptionMessage.INVALID_MONEY_TYPE.toString());
         }
     }
 
     public static void validatePositiveNumber(String money) {
         int amount = Integer.parseInt(money);
         if (amount < 0) {
-            throw new IllegalArgumentException(MONEY_MUST_NOT_NEGATIVE);
+            throw new IllegalArgumentException(ExceptionMessage.MONEY_MUST_NOT_NEGATIVE.toString());
         }
     }
 
     public static void validateDivideByThousandUnit(String money) {
         int amount = Integer.parseInt(money);
         if (amount % 1000 != 0) {
-            throw new IllegalArgumentException(MONEY_MUST_MULTIPLE_OF_THOUSAND);
+            throw new IllegalArgumentException(
+                ExceptionMessage.MONEY_MUST_MULTIPLE_OF_THOUSAND.toString());
         }
     }
 }
